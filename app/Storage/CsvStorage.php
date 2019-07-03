@@ -5,7 +5,6 @@ namespace App\Storage;
 use App\Exception\ParserException;
 use App\Helper\Hash;
 use App\Interfaces\StorageInterface;
-use App\ValueObject\Domain;
 
 final class CsvStorage implements StorageInterface
 {
@@ -35,7 +34,7 @@ final class CsvStorage implements StorageInterface
     public function getReportFilePath(string $domain): string
     {
         $filename = $this->getFilename($domain);
-        $file = $this->getFileResource($filename, self::READ_MODE);
+        $this->getFileResource($filename, self::READ_MODE);
 
         return $filename;
     }

@@ -2,10 +2,11 @@
 
 namespace App\Component;
 
+use App\Interfaces\ComponentInterface;
 use App\Interfaces\HandlerInterface;
 use DOMDocument;
 
-final class ParseComponent
+final class ParseComponent implements ComponentInterface
 {
     /**
      * @param HandlerInterface $handler

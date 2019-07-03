@@ -6,6 +6,7 @@ use App\Component\ParseComponent;
 use App\Handler\ImageHandler;
 use App\Handler\UrlHandler;
 use App\Helper\Counter;
+use App\Interfaces\ComponentInterface;
 use App\Interfaces\HttpClientInterface;
 use DOMDocument;
 use App\Http\Client\HttpClient;
@@ -54,8 +55,9 @@ final class ParseService
      * ParseService constructor.
      * @param HttpClientInterface $httpClient
      * @param DOMDocument $dom
+     * @param ComponentInterface $component
      */
-    public function __construct(HttpClientInterface $httpClient, DOMDocument $dom, ParseComponent $component)
+    public function __construct(HttpClientInterface $httpClient, DOMDocument $dom, ComponentInterface $component)
     {
         $this->httpClient = $httpClient;
         $this->dom = $dom;
