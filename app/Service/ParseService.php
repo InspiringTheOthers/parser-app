@@ -15,6 +15,7 @@ use App\Exception\ParserException;
 final class ParseService
 {
     private const DEFAULT_AMOUNT_URLS = 10;
+    private const URL_CLOSE_SLASH = '/';
 
     /**
      * @var HttpClient
@@ -127,7 +128,7 @@ final class ParseService
      */
     private function getCorrectBaseUrl($baseUrl): string
     {
-        return $baseUrl . '/';
+        return $baseUrl . self::URL_CLOSE_SLASH;
     }
 
     /**
